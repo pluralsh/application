@@ -295,7 +295,7 @@ func hasEmptyNodePort(ports []corev1.ServicePort) bool {
 
 func hasEmptyIngressIP(ingress []corev1.LoadBalancerIngress) bool {
 	for _, i := range ingress {
-		if isEmpty(i.IP) {
+		if isEmpty(i.IP) && isEmpty(i.Hostname) {
 			return true
 		}
 	}
